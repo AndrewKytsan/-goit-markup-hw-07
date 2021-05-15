@@ -1,0 +1,20 @@
+.menu{
+    align-items: baseline;
+    
+}
+
+.menu__item{
+    position: relative;
+}
+
+
+.menu__item:not(:last-child),
+.contacts__item:not(:last-child){
+    margin-right: 50px;
+}
+
+.menu__link{
+    color:var(--title-cl);
+    padding-top: 32px;
+    padding-bottom: 32px;
+    }
