@@ -1,20 +1,39 @@
-.menu{
+.nav__list{
+   display: flex;
     align-items: baseline;
     
 }
 
-.menu__item{
+.nav__item{
     position: relative;
 }
 
 
-.menu__item:not(:last-child),
+.nav__item:not(:last-child),
 .contacts__item:not(:last-child){
     margin-right: 50px;
 }
 
-.menu__link{
+.nav__link{
     color:var(--title-cl);
     padding-top: 32px;
     padding-bottom: 32px;
     }
+
+.nav__link--curent{
+    display: block;
+    color: var(--accent-cl);
+    }
+    
+.nav__link--curent::after{
+    content: "";
+    border: 2px solid var(--accent-cl);
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--accent-cl);
+        
+    }
+    
