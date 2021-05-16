@@ -1,3 +1,6 @@
+.team{
+    background-color: var(--grey-bg);
+}
 .team__item{
     background-color:var(--white-cl);
    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -6,7 +9,9 @@
    margin-top: 30px;
    flex-basis: calc((100% - 120px) / 4);
    }
-
+.team__list{
+    @extend %flex;
+}
 .team__card{
     padding: 30px 32px;
 }
