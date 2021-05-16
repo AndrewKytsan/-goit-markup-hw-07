@@ -2,6 +2,10 @@
     padding-top: 94px;
 }
 
+.features__list{
+    @extend %card-set;
+}
+
 .features-title{
     font-size: 14px;
     font-weight: bold;
@@ -21,8 +25,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 120px;
     margin-bottom: 30px;
-    padding: 25px 100px;
     background-color: var(--grey-bg);
     border-radius: 4px;
 }
