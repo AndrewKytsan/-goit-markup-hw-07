@@ -308,7 +308,7 @@ body {
   color: var(--main-text-cl);
 }
 
-h1, h2, h3, p, ul {
+h1, h2, h3, p {
   margin: 0;
   padding: 0;
 }
@@ -317,7 +317,13 @@ img {
   display: block;
 }
 
-.flex {
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.filter__list, .client__list, .team__list, .social {
   display: flex;
   align-items: center;
 }
@@ -349,41 +355,14 @@ img {
   color: var(--accent-cl);
 }
 
-.list {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.line {
-  border-bottom: 1px solid #ECECEC;
-}
-
-.curent {
-  display: block;
-  color: var(--accent-cl);
-}
-
-.curent::after {
-  content: "";
-  border: 2px solid var(--accent-cl);
-  border-radius: 4px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--accent-cl);
-}
-
-.card-set {
+.products__list, .work__list, .features__list {
   display: flex;
   flex-wrap: wrap;
   margin-left: -30px;
   margin-top: -30px;
 }
 
-.card-set__item {
+.products__item, .work__item {
   margin-left: 30px;
   margin-top: 30px;
   flex-basis: calc((100% - 90px) / 3);
@@ -402,26 +381,44 @@ img {
   color: var(--title-cl);
 }
 
-.menu {
+.nav__list {
+  display: flex;
   align-items: baseline;
 }
 
-.menu__item {
+.nav__item {
   position: relative;
 }
 
-.menu__item:not(:last-child),
+.nav__item:not(:last-child),
 .contacts__item:not(:last-child) {
   margin-right: 50px;
 }
 
-.menu__link {
+.nav__link {
   color: var(--title-cl);
   padding-top: 32px;
   padding-bottom: 32px;
 }
 
+.nav__link--curent {
+  display: block;
+  color: var(--accent-cl);
+}
+
+.nav__link--curent::after {
+  content: "";
+  border: 2px solid var(--accent-cl);
+  border-radius: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--accent-cl);
+}
+
 .contacts {
+  display: flex;
   margin-left: auto;
 }
 
@@ -740,7 +737,7 @@ img {
   flex-direction: column;
 }
 
-.address__list__item {
+.address__list-item {
   font-style: normal;
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.74;
@@ -840,12 +837,13 @@ img {
   margin-bottom: 50px;
 }
 
-.block--dark-bg {
-  background-color: var(--dark-bg);
+.header {
+  border-bottom: 1px solid #ECECEC;
 }
 
-.block--grey-bg {
-  background-color: var(--grey-bg);
+.header__container {
+  display: flex;
+  align-items: center;
 }
 
 .header__logo {
@@ -857,6 +855,7 @@ img {
   margin: auto;
   padding-top: 200px;
   padding-bottom: 200px;
+  background-color: var(--dark-bg);
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-bg-img.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -920,8 +919,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 120px;
   margin-bottom: 30px;
-  padding: 25px 100px;
   background-color: var(--grey-bg);
   border-radius: 4px;
 }
@@ -949,6 +948,10 @@ img {
   text-transform: uppercase;
   color: var(--white-cl);
   background-color: rgba(47, 48, 58, 0.8);
+}
+
+.team {
+  background-color: var(--grey-bg);
 }
 
 .team__item {
@@ -1013,15 +1016,16 @@ img {
   fill: var(--accent-cl);
 }
 
-.porducts__btn-list {
+.filter__list {
+  justify-content: center;
   margin-bottom: 50px;
 }
 
-.products__btn-list--item:not(:last-child) {
+.filter__item:not(:last-child) {
   margin-right: 8px;
 }
 
-.products__card {
+.products__link {
   text-decoration: none;
   display: block;
   transition-property: box-shadow;
@@ -1029,12 +1033,12 @@ img {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.products__card:hover,
-.products__card:focus {
+.products__link:hover,
+.products__link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.products__box {
+.products__card {
   position: relative;
   width: 370px;
   height: 294px;
@@ -1055,8 +1059,8 @@ img {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.products__card:hover .products__overlay,
-.products__card:focus .products__overlay {
+.products__link:hover .products__overlay,
+.products__link:focus .products__overlay {
   transform: translateY(0);
 }
 
@@ -1091,12 +1095,9 @@ img {
 }
 
 .footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   padding-top: 60px;
   padding-bottom: 60px;
+  background-color: var(--dark-bg);
 }
 
 .footer__container {
@@ -1104,7 +1105,7 @@ img {
   align-items: baseline;
 }
 
-.footer__social-net {
+.footer__social {
   margin-left: 70px;
 }
 
