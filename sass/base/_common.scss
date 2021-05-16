@@ -16,7 +16,7 @@ body{
     color: var(--main-text-cl);
 }
 
-h1,h2,h3,p,ul{
+h1,h2,h3,p{
     margin: 0;
     padding: 0;
 }
@@ -24,11 +24,15 @@ img{
     display: block;
 }
 
-.flex{
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+%flex{
     display: flex;
-    align-items:center;
-    
-    }
+    align-items: center;
+}
 
 .visually-hidden {
     position: absolute !important;
@@ -58,32 +62,5 @@ img{
  
 }
 
-.list{
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.line{
-    border-bottom: 1px solid #ECECEC;
-    }
-
-.curent{
-    display: block;
-    color: var(--accent-cl);
-}
-
-.curent::after{
-    content: "";
-    border: 2px solid var(--accent-cl);
-    border-radius: 4px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--accent-cl);
-    
-}
 
 
