@@ -1,3 +1,9 @@
+.work__list{
+    @extend %card-set;
+}
+.work__item{
+    @extend %card-set__item;
+}
 .work__thumb{
     z-index: -1;
     position: relative;
